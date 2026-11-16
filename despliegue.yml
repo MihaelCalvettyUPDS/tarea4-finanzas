@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - pg_data:/var/lib/postgresql
+    networks:
+      - red_finanzas
+  api:
+    image: mihaelcalvetty/finanzas-api:1.0
+    container_name: api_finanzas
+    environment:
+      - ConnectionStrings__DefaultConnection=${CONNECTION_STRING}
+      - ASPNETCORE_URLS=http://+:8080
+      - ASPNETCORE_ENVIRONMENT=Production
+    ports:
+      - ${API_PORT}:8080
+    depends_on:
+      - db
+    networks:
+      - red_finanzas
+volumes:
+  pg_data:
+networks:
+  red_finanzas: 

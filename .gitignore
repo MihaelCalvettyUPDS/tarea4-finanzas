@@ -1,0 +1,12 @@
+# Archivos de variables de entorno con credenciales reales
+.env
+
+# Carpetas de compilación y caché de .NET
+bin/
+obj/
+.vs/
+*.user
+
+# Archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
