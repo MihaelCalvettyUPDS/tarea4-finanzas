@@ -1,3 +1,4 @@
+# modificacion de prueba
 # NombreProyecto - Sistema Backend finanzas(.NET 10 + PostgreSQL)
 
 API RESTful desarrollada en **.NET 10** con persistencia en **PostgreSQL**, orquestada mediante **Docker Compose** con separación entre entorno de construcción (`contructor.yml`) y despliegue limpio (`despliegue.yml`).
